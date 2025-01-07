@@ -7,11 +7,13 @@ document.addEventListener('DOMContentLoaded', function () {
     // Open Sidebar
     openBtn.addEventListener("click", function () {
         sidebar.classList.add("open");
+        openBtn.style.display = 'none'; // Hide the open button when sidebar opens
     });
 
     // Close Sidebar
     closeBtn.addEventListener("click", function () {
         sidebar.classList.remove("open");
+        openBtn.style.display = 'block'; // Show the open button when sidebar closes
     });
 
     // Scroll event for hiding the button on scroll

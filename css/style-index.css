@@ -5,10 +5,11 @@
     box-sizing: border-box;
 }
 
-a{
+a {
     text-decoration: none;
     color: #ff6600;
 }
+
 html, body {
     height: 100%;
     font-family: 'Roboto', sans-serif;
@@ -40,9 +41,15 @@ html, body {
     background: none;
     border: none;
     position: absolute;
-    top: 6px;
-    right: 20px;
+    top: 3px;
+    right: 22px;
     cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.sidebar .close-btn:hover {
+    transform: scale(1.1);
+    color: #ff6600;
 }
 
 .sidebar .sidebar-content a {
@@ -60,17 +67,30 @@ html, body {
     color: white;
 }
 
-/* Open Sidebar Button */
+/* Open Sidebar Button - Fixed Position */
 .open-btn {
     font-size: 36px;
     color: white;
-    background: none;
+    background: #ff6600;
     border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
     position: fixed;
-    top: 6px;
+    top: 20px;
     left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
-    z-index: 999;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.open-btn:hover {
+    transform: scale(1.1);
+    background: #e65c00;
 }
 
 /* Hero Section Styling */
@@ -78,57 +98,26 @@ html, body {
     text-align: center;
     padding: 150px 30px;
     background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url('images/hero-bg.jpg') center/cover no-repeat;
-    background-size: cover;
     border-radius: 10px;
     margin-top: 60px;
     position: relative;
     z-index: 1;
-    animation: fadeIn 2s ease-in-out;
 }
 
-/* Fade-in Effect */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Hero Section Title */
 .hero-section h1 {
     font-size: 4rem;
     color: #ff6600;
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 20px;
-    opacity: 0;
-    animation: textAppear 2s ease-out forwards;
 }
 
-/* Text Appearance Animation */
-@keyframes textAppear {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Hero Section Paragraph */
 .hero-section p {
     font-size: 1.8rem;
     color: #fff;
     margin-bottom: 30px;
 }
 
-/* Button Styling */
 .hero-section .btn-primary {
     background-color: #ff6600;
     border: none;
@@ -164,21 +153,9 @@ html, body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover Effect for Larger Screens */
-@media (min-width: 769px) {
-    .card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 10px 20px rgba(255, 102, 0, 0.3);
-    }
-}
-
-/* Focus Effect for Mobile and Tablets */
-@media (max-width: 768px) {
-    .card:focus {
-        transform: translateY(-10px);
-        box-shadow: 0 10px 20px rgba(255, 102, 0, 0.3);
-        outline: none;
-    }
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(255, 102, 0, 0.3);
 }
 
 .card h3 {
@@ -209,9 +186,11 @@ footer {
     .hero-section h1 {
         font-size: 2.5rem;
     }
+
     .hero-section p {
         font-size: 1.4rem;
     }
+
     .hero-section .btn-primary {
         padding: 15px 30px;
         font-size: 1.2rem;
@@ -228,6 +207,18 @@ footer {
     .open-btn {
         font-size: 30px;
     }
+
+    .sidebar.open {
+        left: 0;
+    }
+
+    /* Adjust open button display for mobile */
+    .open-btn {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1000;
+    }
 }
 
 /* For Extra Small Screens */
@@ -235,9 +226,11 @@ footer {
     .hero-section h1 {
         font-size: 1.8rem;
     }
+
     .hero-section p {
         font-size: 1.2rem;
     }
+
     .hero-section .btn-primary {
         padding: 10px 20px;
         font-size: 1rem;
@@ -253,5 +246,11 @@ footer {
 
     .open-btn {
         font-size: 26px;
+    }
+
+    /* Adjust open button position for extra small screens */
+    .open-btn {
+        top: 15px;
+        left: 10px;
     }
 }
