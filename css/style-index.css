@@ -41,8 +41,8 @@ html, body {
     background: none;
     border: none;
     position: absolute;
-    top: 3px;
-    right: 22px;
+    top: 10px;
+    right: 20px;
     cursor: pointer;
     transition: transform 0.3s ease, color 0.3s ease;
 }
@@ -98,26 +98,57 @@ html, body {
     text-align: center;
     padding: 150px 30px;
     background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url('images/hero-bg.jpg') center/cover no-repeat;
+    background-size: cover;
     border-radius: 10px;
     margin-top: 60px;
     position: relative;
     z-index: 1;
+    animation: fadeIn 2s ease-in-out;
 }
 
+/* Fade-in Effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero Section Title */
 .hero-section h1 {
     font-size: 4rem;
     color: #ff6600;
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 20px;
+    opacity: 0;
+    animation: textAppear 2s ease-out forwards;
 }
 
+/* Text Appearance Animation */
+@keyframes textAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero Section Paragraph */
 .hero-section p {
     font-size: 1.8rem;
     color: #fff;
     margin-bottom: 30px;
 }
 
+/* Button Styling */
 .hero-section .btn-primary {
     background-color: #ff6600;
     border: none;
