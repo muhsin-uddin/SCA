@@ -141,8 +141,8 @@ p {
 .instructions li:before {
     content: '⚠️';
     position: absolute;
-    left: -25px;
-    top: 5px;
+    left: -31px;
+    top: -1px;
     color: #ff6600;
     font-size: 1.5rem;
     animation: bounce 1.5s infinite;
