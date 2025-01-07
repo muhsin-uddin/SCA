@@ -45,8 +45,11 @@ button {
     position: relative;
 }
 
-/* Back Button */
+/* Back Button (Positioned at Bottom) */
 .back-btn {
+    position: fixed; /* Fixed position at the bottom */
+    bottom: 20px;
+    left: 20px;
     background: none;
     color: #ff6600;
     font-size: 1.2rem;
@@ -54,7 +57,7 @@ button {
     border: 2px solid #ff6600;
     border-radius: 25px;
     transition: all 0.3s ease;
-    margin-bottom: 40px;
+    z-index: 1000; /* Ensure it's above other elements */
 }
 
 .back-btn:hover {
@@ -138,16 +141,6 @@ p {
     position: relative;
 }
 
-/* .instructions li:before {
-    content: '⚠️';
-    position: absolute;
-    left: -31px;
-    top: -1px;
-    color: #ff6600;
-    font-size: 1.5rem;
-    animation: bounce 1.5s infinite;
-} */
-
 /* Hover Effects on List Items */
 .instructions li:hover {
     background-color: rgba(255, 102, 0, 0.1);
@@ -166,15 +159,6 @@ p {
     }
 }
 
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     h1 {
@@ -188,6 +172,12 @@ p {
 
     .instructions {
         width: 90%;
+    }
+
+    .back-btn {
+        font-size: 1rem;
+        padding: 8px 15px;
+        border-radius: 20px;
     }
 }
 
@@ -204,5 +194,11 @@ p {
     .btn-login {
         font-size: 1rem;
         padding: 12px 25px;
+    }
+
+    .back-btn {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+        border-radius: 15px;
     }
 }
