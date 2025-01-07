@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Toggle Sidebar
-    const openBtn = document.getElementById("open-btn"); // Declare openBtn
-    const closeBtn = document.getElementById("close-btn");
+    const openBtn = document.getElementById("open-btn");
     const sidebar = document.getElementById("sidebar");
 
     // Open Sidebar
@@ -10,10 +9,12 @@ document.addEventListener('DOMContentLoaded', function () {
         openBtn.style.display = 'none'; // Hide the open button when sidebar opens
     });
 
-    // Close Sidebar
-    closeBtn.addEventListener("click", function () {
-        sidebar.classList.remove("open");
-        openBtn.style.display = 'block'; // Show the open button when sidebar closes
+    // Close Sidebar by clicking outside the sidebar
+    document.addEventListener("click", function (event) {
+        if (!sidebar.contains(event.target) && !openBtn.contains(event.target)) {
+            sidebar.classList.remove("open");
+            openBtn.style.display = 'block'; // Show the open button when sidebar closes
+        }
     });
 
     // Scroll event for hiding the button on scroll
