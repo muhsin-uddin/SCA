@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SCA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style-login.css">
+</head>
+<body>
+    <!-- Login Container -->
+    <div class="login-container">
+        <h1>Login to Secret Crime Agency</h1>
+        
+        <!-- Back Button -->
+        <div class="btn-back">
+            <a href="index.html">Back to Home</a>
+        </div>
+
+        <!-- Instructions -->
+        <div class="instructions">
+            <p><strong>Warning:</strong> Unauthorized access will be traced. Failure to comply with our agency's rules will result in immediate termination. Proceed only if you are certain of your actions.</p>
+            <p><strong>Agent ID:</strong> Enter your assigned Agent ID. This is your key to accessing confidential missions.</p>
+            <p><strong>Agent Password:</strong> A password known only to you. If forgotten, you will be terminated.</p>
+            <p><strong>Agency Password:</strong> This is the final password required to gain access. Share it with no one, or face the consequences.</p>
+        </div>
+
+        <!-- Login Form -->
+        <form action="login-process.html" method="POST">
+            <div class="form-group">
+                <label for="agent-id">Agent ID</label>
+                <input type="text" id="agent-id" name="agent-id" required>
+            </div>
+            <div class="form-group">
+                <label for="agent-password">Agent Password</label>
+                <input type="password" id="agent-password" name="agent-password" required>
+            </div>
+            <div class="form-group">
+                <label for="agency-password">Agency Password</label>
+                <input type="password" id="agency-password" name="agency-password" required>
+            </div>
+            <div class="btn-login">
+                <button type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="js/script-login.js"></script>
+</body>
+</html>

@@ -68,23 +68,6 @@ h1 {
     color: #e65c00;
 }
 
-/* Instructions */
-.instructions {
-    text-align: left;
-    color: #e65c00;
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-}
-
-.instructions p {
-    margin-bottom: 15px;
-}
-
-.instructions strong {
-    font-weight: bold;
-    color: #ff6600;
-}
-
 /* Form Group */
 .form-group {
     margin-bottom: 20px;
