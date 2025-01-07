@@ -1,0 +1,252 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #ff6600;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    height: 100%;
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    left: -250px;
+    top: 0;
+    transition: left 0.3s ease;
+    padding: 30px;
+    z-index: 1000;
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.sidebar .sidebar-content a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 1.4rem;
+    margin: 20px 0;
+    padding: 10px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.sidebar .sidebar-content a:hover {
+    background-color: #ff6600;
+    color: white;
+}
+
+/* Open Sidebar Button */
+.open-btn {
+    font-size: 36px;
+    color: white;
+    background: #ff6600;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.open-btn:hover {
+    transform: scale(1.1);
+    background: #e65c00;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 150px 30px;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url('images/hero-bg.jpg') center/cover no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+    margin-top: 60px;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    color: #ff6600;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    animation: slideInLeft 1.5s ease-in-out forwards;
+}
+
+.hero-description {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 30px;
+    animation: fadeInUp 2s ease-in-out forwards;
+}
+
+/* Section Styling */
+.content-section {
+    padding: 40px 50px;
+    margin-top: 50px;
+}
+
+.section-title h2 {
+    font-size: 3rem;
+    color: #ff6600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+.section-title p {
+    font-size: 1.4rem;
+    color: #ccc;
+    line-height: 1.8;
+}
+
+/* Cards */
+.section-card {
+    background-color: #222;
+    border-radius: 10px;
+    padding: 25px;
+    margin-top: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 2s forwards;
+}
+
+.section-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+}
+
+.section-card h3 {
+    font-size: 2rem;
+    color: #ff6600;
+    margin-bottom: 15px;
+}
+
+.section-card p {
+    font-size: 1.2rem;
+    color: #bbb;
+    line-height: 1.6;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #111;
+    color: white;
+    width: 100%;
+    margin-top: 50px;
+    font-size: 1.1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-description {
+        font-size: 1.4rem;
+    }
+
+    .section-title h2 {
+        font-size: 2.5rem;
+    }
+
+    .section-card h3 {
+        font-size: 1.6rem;
+    }
+
+    .section-card p {
+        font-size: 1.1rem;
+    }
+
+    .open-btn {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-description {
+        font-size: 1.2rem;
+    }
+
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+
+    .section-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .section-card p {
+        font-size: 1rem;
+    }
+
+    .open-btn {
+        font-size: 26px;
+    }
+}
