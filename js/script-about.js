@@ -1,30 +1,29 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Toggle Sidebar
     const openBtn = document.getElementById("open-btn");
     const sidebar = document.getElementById("sidebar");
 
     // Open Sidebar
     openBtn.addEventListener("click", function () {
         sidebar.classList.add("open");
-        openBtn.style.display = 'none'; // Hide the open button when sidebar opens
+        openBtn.style.display = 'none';
     });
 
-    // Close Sidebar by clicking outside the sidebar
+    // Close Sidebar by clicking outside
     document.addEventListener("click", function (event) {
         if (!sidebar.contains(event.target) && !openBtn.contains(event.target)) {
             sidebar.classList.remove("open");
-            openBtn.style.display = 'block'; // Show the open button when sidebar closes
+            openBtn.style.display = 'block';
         }
     });
 
-    // Scroll event for hiding the button on scroll
+    // Scroll animation for the open button
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) { // Check if the scroll position is greater than 50px
-            openBtn.style.opacity = '0'; // Hide the button
-            openBtn.style.pointerEvents = 'none'; // Disable button interaction
+        if (window.scrollY > 50) {
+            openBtn.style.opacity = '0';
+            openBtn.style.pointerEvents = 'none';
         } else {
-            openBtn.style.opacity = '1'; // Show the button
-            openBtn.style.pointerEvents = 'auto'; // Enable button interaction
+            openBtn.style.opacity = '1';
+            openBtn.style.pointerEvents = 'auto';
         }
     });
 });

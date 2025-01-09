@@ -26,49 +26,34 @@ html, body {
     position: fixed;
     left: -250px;
     top: 0;
-    transition: left 0.3s ease;
-    padding: 20px;
+    transition: left 0.5s ease, box-shadow 0.5s ease;
+    padding: 30px;
     z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .sidebar.open {
     left: 0;
-}
-
-.sidebar .close-btn {
-    font-size: 36px;
-    color: white;
-    background: none;
-    border: none;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    cursor: pointer;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.sidebar .close-btn:hover {
-    transform: scale(1.1);
-    color: #ff6600;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
 }
 
 .sidebar .sidebar-content a {
     display: block;
     color: white;
-    font-weight: 600;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin: 20px 0;
     padding: 10px;
-    transition: background 0.3s ease;
+    font-weight: 600;
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .sidebar .sidebar-content a:hover {
     background-color: #ff6600;
-    color: white;
+    transform: translateX(10px);
 }
 
-/* Open Sidebar Button - Fixed Position */
+/* Open Sidebar Button */
 .open-btn {
     font-size: 36px;
     color: white;
@@ -90,21 +75,8 @@ html, body {
 }
 
 .open-btn:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(10deg);
     background: #e65c00;
-}
-
-/* Hero Section Styling */
-.hero-section {
-    text-align: center;
-    padding: 150px 30px;
-    background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url('images/hero-bg.jpg') center/cover no-repeat;
-    background-size: cover;
-    border-radius: 10px;
-    margin-top: 60px;
-    position: relative;
-    z-index: 1;
-    animation: fadeIn 2s ease-in-out;
 }
 
 /* Fade-in Effect */
@@ -119,7 +91,32 @@ html, body {
     }
 }
 
-/* Hero Section Title */
+/* Hero Section */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 0 20px;
+    background: linear-gradient(45deg, #333, #000, #333, #000);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 .hero-section h1 {
     font-size: 4rem;
     color: #ff6600;
@@ -128,9 +125,9 @@ html, body {
     margin-bottom: 20px;
     opacity: 0;
     animation: textAppear 2s ease-out forwards;
+    margin: 0;
 }
 
-/* Text Appearance Animation */
 @keyframes textAppear {
     0% {
         opacity: 0;
@@ -142,10 +139,10 @@ html, body {
     }
 }
 
-/* Hero Section Paragraph */
 .hero-section p {
     font-size: 1.8rem;
     color: #fff;
+    margin: 0;
     margin-bottom: 30px;
 }
 
@@ -165,7 +162,7 @@ html, body {
     letter-spacing: 2px;
     transition: transform 0.3s ease, background-color 0.3s ease;
     text-align: center;
-    box-sizing: border-box;  /* Ensure padding doesn't overflow */
+    box-sizing: border-box;
 }
 
 .hero-section .btn-primary a {
@@ -259,7 +256,6 @@ footer {
         left: 0;
     }
 
-    /* Adjust open button display for mobile */
     .open-btn {
         position: fixed;
         top: 20px;
@@ -295,7 +291,6 @@ footer {
         font-size: 26px;
     }
 
-    /* Adjust open button position for extra small screens */
     .open-btn {
         top: 15px;
         left: 10px;
