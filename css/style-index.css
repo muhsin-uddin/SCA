@@ -79,18 +79,6 @@ html, body {
     background: #e65c00;
 }
 
-/* Fade-in Effect */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 /* Hero Section */
 .hero-section {
     display: flex;
@@ -123,20 +111,6 @@ html, body {
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 20px;
-    opacity: 0;
-    animation: textAppear 2s ease-out forwards;
-    margin: 0;
-}
-
-@keyframes textAppear {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 .hero-section p {
