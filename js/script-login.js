@@ -1,22 +1,32 @@
-// Get the login form and add an event listener for form submission
-const loginForm = document.getElementById('login-form');
+document.getElementById('login-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
 
-loginForm.addEventListener('submit', function(event) {
-    event.preventDefault();
+    // Get input values
+    const agentId = document.getElementById('agent-id').value.trim();
+    const agentPassword = document.getElementById('agent-password').value.trim();
+    const agencyPassword = document.getElementById('agency-password').value.trim();
 
-    // Retrieve values from the input fields
-    const agentId = document.getElementById('agent-id').value;
-    const agentPassword = document.getElementById('agent-password').value;
-    const agencyPassword = document.getElementById('agency-password').value;
-
-    // You can add your own login logic here
-    // For example, checking if the credentials match a predefined set
-
+    // Validate input and show notification
     if (agentId && agentPassword && agencyPassword) {
-        alert("Login Successful!");
-        // Redirect to another page (e.g., dashboard or agent portal)
-        window.location.href = "dashboard.html"; // Replace with your desired page
+        showNotification("Login Successful! Redirecting...", "success");
+        setTimeout(() => {
+            window.location.href = "agent-portal.html";
+        }, 2000);
     } else {
-        alert("Please fill in all fields correctly.");
+        showNotification("Please fill in all fields.", "error");
     }
 });
+
+function showNotification(message, type) {
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.textContent = message;
+
+    document.body.appendChild(notification);
+    notification.style.display = "block";
+
+    setTimeout(() => {
+        notification.style.opacity = "0";
+        setTimeout(() => notification.remove(), 500);
+    }, 2000);
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Portal - SCA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style-agent-portal.css">
+</head>
+<body>
+    <!-- Logout Notification -->
+    <div class="notification hidden" id="logout-notification">
+        <p>You have successfully logged out!</p>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <h1>Welcome, Agent 007</h1>
+            <button id="logout-btn" class="btn-secondary">Logout</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Mission Overview -->
+        <section class="mission-overview">
+            <h2>Mission Overview</h2>
+            <p>Current Mission: <strong>Operation Nightfall</strong></p>
+            <p>Status: <span class="status-in-progress">In Progress</span></p>
+            <p>Deadline: <strong>15 Jan 2025</strong></p>
+            <a href="missions.html" class="btn-primary">View Mission Details</a>
+        </section>
+
+        <!-- Agent Dashboard Panels -->
+        <div class="dashboard-panels">
+            <div class="panel">
+                <h3>Notifications</h3>
+                <ul>
+                    <li>New directive issued: Check Mission HQ.</li>
+                    <li>Update: Security protocols reinforced.</li>
+                    <li>Reminder: Complete monthly performance review.</li>
+                </ul>
+            </div>
+            <div class="panel">
+                <h3>Agent Statistics</h3>
+                <p>Missions Completed: <strong>27</strong></p>
+                <p>Current Rank: <strong>Top 5%</strong></p>
+                <p>Security Level: <strong>9/10</strong></p>
+            </div>
+            <div class="panel">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="agent-info.html">Update Profile</a></li>
+                    <li><a href="security.html">Security Settings</a></li>
+                    <li><a href="support.html">Contact Support</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Task Calendar -->
+        <section class="task-calendar">
+            <h2>Task Calendar</h2>
+            <p>Your upcoming tasks and mission deadlines:</p>
+            <ul>
+                <li><strong>Jan 12:</strong> Briefing for Operation Shadow.</li>
+                <li><strong>Jan 14:</strong> Submit Surveillance Report.</li>
+                <li><strong>Jan 15:</strong> Complete Operation Nightfall.</li>
+            </ul>
+        </section>
+
+        <!-- Recent Activities -->
+        <section class="recent-activities">
+            <h2>Recent Activities</h2>
+            <ul>
+                <li><strong>Jan 10:</strong> Updated personal profile.</li>
+                <li><strong>Jan 09:</strong> Reviewed mission details.</li>
+                <li><strong>Jan 08:</strong> Completed encryption training.</li>
+            </ul>
+        </section>
+    </div>
+
+    <script src="js/script-agent-portal.js"></script>
+</body>
+</html>
