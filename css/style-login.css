@@ -162,6 +162,6 @@ input:focus {
 }
 @media (max-width: 768px) {
     .notification {
-        top: 45px;
+        top: 65px;
     }
 }
