@@ -160,3 +160,8 @@ input:focus {
         transform: translate(-50%, -40%);
     }
 }
+@media (max-width: 768px) {
+    .notification {
+        top: 45px;
+    }
+}
